@@ -13,4 +13,3 @@ def Bubble_Sort(array):
             break
     return array
 print(Bubble_Sort([8,4,6,1,2,3,7,9,5]))
-print(Bubble_Sort([1,2,3,4,5]))
