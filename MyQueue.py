@@ -1,5 +1,5 @@
 from collections import deque
-class Queue:
+class MyQueue:
     def __init__(self):
         self.a = deque()
 
@@ -15,7 +15,7 @@ class Queue:
     def size(self):
         return len(self.a)
 
-obj = Queue()
+obj = MyQueue()
 obj.push(3)
 obj.push(4)
 obj.push(5)
