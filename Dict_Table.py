@@ -9,7 +9,7 @@ class Dict_Table:
             d += ord(char)
         return d % self.max
 
-    def __setitem__(self, key,val):              # we can use add here in place of __setitem__(will be called by it's name)
+    def __setitem__(self, key,val):
         d = self.get_dict(key)
         self.arr[d] = val
 
