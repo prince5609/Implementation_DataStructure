@@ -22,7 +22,7 @@ class Quick_Sort:
         return end
 
 
-    def quick_sort(self,array,start,end):
+    def quick_sort(self, array, start, end):
         if start < end:
             pi = self.partition(array, start, end)
             self.quick_sort(array, start, pi-1)
