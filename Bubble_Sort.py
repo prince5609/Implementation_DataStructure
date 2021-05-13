@@ -1,5 +1,5 @@
 def Bubble_Sort(array):
-    j = 0
+
     n = len(array) -1
     for j in range(n):
         swapped = False
