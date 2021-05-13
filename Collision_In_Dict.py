@@ -25,7 +25,7 @@ class Dict_Table:
                 element_found = True
                 break
         if not element_found:
-            self.arr[d].append((key,value))
+            self.arr[d].append((key, value))
 
     def __delitem__(self, key):
         d = self.get_Dict(key)
