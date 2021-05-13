@@ -22,6 +22,7 @@ obj = stack()
 obj.push(3)
 obj.push(4)
 obj.push(5)
+obj.push(8)
 obj.pop()
 print(obj.a)
 
