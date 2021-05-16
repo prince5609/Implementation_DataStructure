@@ -42,7 +42,7 @@ class LinkedList:
             itr = itr.next
         return count
 
-    def remove_at(self,index):
+    def remove_at(self, index):
         if index <= 0 or index > self.get_length():
             raise Exception("not a valid index")
 
@@ -58,7 +58,7 @@ class LinkedList:
             itr = itr.next
             count += 1
 
-    def insert_at(self,index,data):
+    def insert_at(self, index, data):
         if index <= 0 or index > self.get_length():
             raise Exception("not a valid index")
 
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     ll.print()
     ll.insert_at_end(65)
     ll.print()
-    ll.insert_at(2,"pineapple")
+    ll.insert_at(2, "pineapple")
     ll.print()
     ll.remove_at(2)
     ll.print()
