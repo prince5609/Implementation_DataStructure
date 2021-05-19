@@ -1,13 +1,13 @@
 def selection_sort(array):
     for i in range(len(array)-1):
-        min_index = i
-        for j in range(min_index+1,len(array)):
-            if array[j] < array[min_index]:
-                min_index = j
-        if i != min_index:
-            array[i],array[min_index] = array[min_index],array[i]
+        minimum = min(array[i + 1:len(array)])
+        if array[i] > minimum:
+            index = array[i+1:len(array)].index(minimum)
+            array[i],array[index+i+1] = array[index+i+1],array[i]
+        elif array[i] == minimum:
+            index = array[i + 1:len(array)].index(minimum)
+            array[i+1],array[index] = array[index],array[i+1]
     return array
-
 print(selection_sort([21,38,29,17,4,25,11,32,9]))
 print(selection_sort([1,0]))
 print(selection_sort([1,2,3,4,5,6,7,8,9]))
