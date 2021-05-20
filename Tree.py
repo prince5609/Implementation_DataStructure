@@ -29,7 +29,9 @@ def make_tree():
     root = TreeNode("World")
 
     Country1 = TreeNode("India")
-    Country1.add_child(TreeNode("Delhi"))
+    city = TreeNode("Delhi")
+    city.add_child(TreeNode("Dark"))
+    Country1.add_child(city)
     Country1.add_child(TreeNode("Maharashtra"))
     Country1.add_child(TreeNode("Rajasthan"))
 
