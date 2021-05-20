@@ -28,24 +28,24 @@ class TreeNode:
 def make_tree():
     root = TreeNode("World")
 
-    India = TreeNode("India")
-    India.add_child(TreeNode("Delhi"))
-    India.add_child(TreeNode("Maharashtra"))
-    India.add_child(TreeNode("Rajasthan"))
+    Country1 = TreeNode("India")
+    Country1.add_child(TreeNode("Delhi"))
+    Country1.add_child(TreeNode("Maharashtra"))
+    Country1.add_child(TreeNode("Rajasthan"))
 
-    America = TreeNode("America")
-    America.add_child(TreeNode("Washington D.C"))
-    America.add_child(TreeNode("California"))
-    America.add_child(TreeNode("New york"))
+    Country2 = TreeNode("America")
+    Country2.add_child(TreeNode("Washington D.C"))
+    Country2.add_child(TreeNode("California"))
+    Country2.add_child(TreeNode("New york"))
 
-    Russia = TreeNode("Russia")
-    Russia.add_child(TreeNode("Altai"))
-    Russia.add_child(TreeNode("Brat"))
-    Russia.add_child(TreeNode("Sakha"))
+    Country3 = TreeNode("Russia")
+    Country3.add_child(TreeNode("Altai"))
+    Country3.add_child(TreeNode("Brat"))
+    Country3.add_child(TreeNode("Sakha"))
 
-    root.add_child(India)
-    root.add_child(America)
-    root.add_child(Russia)
+    root.add_child(Country1)
+    root.add_child(Country2)
+    root.add_child(Country3)
 
     root.print()
 
