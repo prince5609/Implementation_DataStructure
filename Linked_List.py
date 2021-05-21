@@ -1,24 +1,16 @@
 class Node:
-    def __init__(self, data = None, next = None):
+    def __init__(self, data, next=None):
         self.data = data
         self.next = next
 
-class LinkedList:
+
+class Linked_list:
     def __init__(self):
         self.head = None
-    def insert_at_begning(self, data):
+
+    def insert_at_beginning(self, data):
         node = Node(data, self.head)
         self.head = node
-
-    def print(self):
-        if self.head is None:
-            return print("linked list is empty")
-        itr = self.head
-        llstr = ""
-        while itr:
-            llstr += str(itr.data) + "-->"
-            itr = itr.next
-        print(llstr)
 
     def insert_at_end(self, data):
         if self.head is None:
@@ -35,60 +27,67 @@ class LinkedList:
             self.insert_at_end(data)
 
     def get_length(self):
-        count = 0
+        length = 0
         itr = self.head
         while itr:
-            count += 1
+            length += 1
             itr = itr.next
-        return count
+        return length
 
-    def remove_at(self, index):
-        if index <= 0 or index > self.get_length():
-            raise Exception("not a valid index")
+    def insert_at(self, index, value):
+        if 0 > index > self.get_length():
+            raise Exception("Invalid Index")
 
-        if index == 0 :
-            self.head = self.head.next
-            return
+        if index == 0:
+            self.insert_at_beginning(value)
+
         count = 0
         itr = self.head
         while itr:
-            if count == index-1:
-                itr.next = itr.next.next
+            if count == index - 1:
+                itr.next = Node(value, itr.next)
                 break
             itr = itr.next
             count += 1
 
-    def insert_at(self, index, data):
-        if index <= 0 or index > self.get_length():
-            raise Exception("not a valid index")
+    def remove_at(self, index):
+        if 0 > index > self.get_length():
+            raise Exception("Invalid Index")
 
         if index == 0:
-            self.insert_at_begning(data)
+            self.head = self.head.next
+            return
 
         count = 0
         itr = self.head
         while itr:
-            if count == index-1:
-                node = Node(data, itr.next)
-                itr.next = node
-            itr = itr.next
+            if count == index - 1:
+                itr.next = itr.next.next
+                break
             count += 1
+            itr = itr.next
+
+    def print(self):
+        if self.head is None:
+            print("Linked List Is Empty")
+        itr = self.head
+        link_list = ""
+        while itr:
+            link_list += str(itr.data) + "-->"
+            itr = itr.next
+        print(link_list)
+
 
 if __name__ == "__main__":
-    ll = LinkedList()
-    ll.insert_values(["banana", "orange", "pineapple", "grapes"])
-    ll.print()
-    ll.insert_at_begning(5)
-    ll.print()
-    ll.insert_at_begning(89)
-    ll.print()
-    ll.insert_at_end(58)
-    ll.print()
-    ll.insert_at_end(65)
-    ll.print()
-    ll.insert_at(2, "pineapple")
-    ll.print()
-    ll.remove_at(2)
-    ll.print()
-
-
+    obj = Linked_list()
+    obj.insert_at_beginning("Prince")
+    obj.print()
+    obj.insert_at_beginning("Aryan")
+    obj.print()
+    obj.insert_at_end("Nishant")
+    obj.print()
+    obj.insert_at(2, "Myra")
+    obj.print()
+    obj.remove_at(3)
+    obj.print()
+    print(obj.get_length())
