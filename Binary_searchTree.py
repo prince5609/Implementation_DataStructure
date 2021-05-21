@@ -92,5 +92,5 @@ if __name__ == "__main__":
     print(number_tree.in_order_traversal())
     print(number_tree.search(29))
     print(number_tree.search(100))
-    number_tree.delete_value(29)
+    number_tree.delete_value(7)
     print("after delete of 7", number_tree.in_order_traversal())
