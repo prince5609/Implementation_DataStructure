@@ -81,6 +81,17 @@ class Linked_list:
             count += 1
             itr = itr.next
 
+    def reverse_list(self):
+        prev = None
+        curr = self.head
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+        self.head = prev
+        return self.head
+
     def print(self):
         if self.head is None:
             print("Linked List Is Empty")
@@ -106,3 +117,5 @@ if __name__ == "__main__":
     obj.print()
     print(obj.get_length())
     print(obj.search(2))
+    obj.reverse_list()
+    obj.print()
