@@ -47,6 +47,28 @@ class BinaryTreeNode:
             array += self.right.in_order_traversal()
         return array
 
+    def pre_order_traversal(self):
+        array = []
+        array.append(self.data)  # Base root value
+
+        if self.left:
+            array += self.left.in_order_traversal()
+
+        if self.right:
+            array += self.right.in_order_traversal()
+        return array
+
+    def post_order_traversal(self):
+        array = []
+        if self.left:
+            array += self.left.in_order_traversal()
+
+        if self.right:
+            array += self.right.in_order_traversal()
+
+        array.append(self.data)  # Base root value
+        return array
+
     def max(self):
         if self.right is None:
             return self.data
@@ -90,6 +112,8 @@ if __name__ == "__main__":
     numbers = [11, 9, 2, 7, 29, 15, 28]
     number_tree = make_tree(numbers)
     print(number_tree.in_order_traversal())
+    print(number_tree.pre_order_traversal())
+    print(number_tree.post_order_traversal())
     print(number_tree.search(29))
     print(number_tree.search(100))
     number_tree.delete_value(7)
