@@ -67,6 +67,20 @@ class Linked_list:
             count += 1
             itr = itr.next
 
+    def search(self, index):
+        if 0 > index > self.get_length():
+            raise Exception("Invalid")
+
+        elif index == 0:
+            return self.head.data
+        count = 1
+        itr = self.head.next
+        while itr:
+            if count == index:
+                return itr.data
+            count += 1
+            itr = itr.next
+
     def print(self):
         if self.head is None:
             print("Linked List Is Empty")
@@ -91,3 +105,4 @@ if __name__ == "__main__":
     obj.remove_at(3)
     obj.print()
     print(obj.get_length())
+    print(obj.search(2))
