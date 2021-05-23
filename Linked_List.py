@@ -120,28 +120,23 @@ class Linked_list:
 def merge_two_linked_list(a, b):
     l1 = a.get_length()
     l2 = b.get_length()
-    obj3 = Linked_list()
-    obj3.insert_at_end(a.get_data(0))
     if a.get_data(0) >= b.get_data(0):
+        a.insert_at(0, b.get_data(0))
         j = 1
         i = 1
-        obj3.insert_at_end(b.get_data(0))
     else:
         j = 0
         i = 1
     while i < l1 and j < l2:
         if a.get_data(i) >= b.get_data(j):
-            obj3.insert_at_end(b.get_data(j))
+            a.insert_at(i, b.get_data(j))
             j += 1
-        obj3.insert_at_end(a.get_data(i))
-        i += 1
-    while i < l1:
-        obj3.insert_at_end(a.get_data(i))
         i += 1
     while j < l2:
-        obj3.insert_at_end(b.get_data(j))
+        a.insert_at(i, b.get_data(j))
         j += 1
-    return obj3.print()
+        i += 1
+    return a.print()
 
 
 if __name__ == "__main__":
