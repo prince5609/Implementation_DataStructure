@@ -118,8 +118,7 @@ class Linked_list:
 
 
 def merge_two_linked_list(a, b):
-    l1 = a.get_length()
-    l2 = b.get_length()
+    length = b.get_length()
     if a.get_data(0) >= b.get_data(0):
         a.insert_at(0, b.get_data(0))
         j = 1
@@ -127,12 +126,12 @@ def merge_two_linked_list(a, b):
     else:
         j = 0
         i = 1
-    while i < l1 and j < l2:
+    while j < length:
         if a.get_data(i) >= b.get_data(j):
             a.insert_at(i, b.get_data(j))
             j += 1
         i += 1
-    while j < l2:
+    while j < length:
         a.insert_at(i, b.get_data(j))
         j += 1
         i += 1
@@ -140,25 +139,28 @@ def merge_two_linked_list(a, b):
 
 
 if __name__ == "__main__":
-    obj = Linked_list()
-    obj.insert_at_beginning("Prince")
-    obj.print()
-    obj.insert_at_beginning("Aryan")
-    obj.print()
-    obj.insert_at_end("Nishant")
-    obj.print()
-    obj.insert_at(2, "Myra")
-    obj.print()
-    obj.remove_at(3)
-    obj.print()
-    print(obj.get_length())
-    print(obj.search(2))
-    obj.reverse_list()
-    obj.print()
+    obj1 = Linked_list()
+    obj1.insert_at_beginning(1)
+    obj1.insert_at_end(3)
+    obj1.insert_at_end(5)
+    obj1.insert_at_end(8)
+    obj1.insert_at_end(9)
+    obj1.insert_at_end(12)
+    obj1.insert_at_end(20)
+    obj1.print()
+    obj1.remove_at(6)
+    obj1.print()
+    obj1.insert_at(6, 18)
+    obj1.print()
+    print("Length of list1 = " + str(obj1.get_length()))
+    print("data at index 2 in Lis1 = " + str(obj1.get_data(2)))
 
     obj2 = Linked_list()
-    obj2.insert_at_end("Ram")
-    obj2.insert_at_end("Shyam")
-    obj2.insert_at_end("Sita")
+    obj2.insert_at_end(1)
+    obj2.insert_at_end(2)
+    obj2.insert_at_end(3)
+    obj2.insert_at_end(4)
+    obj2.insert_at_end(5)
     obj2.print()
-    merge_two_linked_list(obj, obj2)
+
+    merge_two_linked_list(obj1, obj2)
