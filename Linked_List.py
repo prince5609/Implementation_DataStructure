@@ -102,6 +102,47 @@ class Linked_list:
             itr = itr.next
         print(link_list)
 
+    def get_data(self, index):
+        if 0 > index > self.get_length():
+            raise Exception("Invalid")
+        if index == 0:
+            return self.head.data
+        else:
+            count = 1
+            itr = self.head.next
+            while itr:
+                if count == index:
+                    return itr.data
+                count += 1
+                itr = itr.next
+
+
+def merge_two_linked_list(a, b):
+    l1 = a.get_length()
+    l2 = b.get_length()
+    obj3 = Linked_list()
+    obj3.insert_at_end(a.get_data(0))
+    if a.get_data(0) >= b.get_data(0):
+        j = 1
+        i = 1
+        obj3.insert_at_end(b.get_data(0))
+    else:
+        j = 0
+        i = 1
+    while i < l1 and j < l2:
+        if a.get_data(i) >= b.get_data(j):
+            obj3.insert_at_end(b.get_data(j))
+            j += 1
+        obj3.insert_at_end(a.get_data(i))
+        i += 1
+    while i < l1:
+        obj3.insert_at_end(a.get_data(i))
+        i += 1
+    while j < l2:
+        obj3.insert_at_end(b.get_data(j))
+        j += 1
+    return obj3.print()
+
 
 if __name__ == "__main__":
     obj = Linked_list()
@@ -119,3 +160,10 @@ if __name__ == "__main__":
     print(obj.search(2))
     obj.reverse_list()
     obj.print()
+
+    obj2 = Linked_list()
+    obj2.insert_at_end("Ram")
+    obj2.insert_at_end("Shyam")
+    obj2.insert_at_end("Sita")
+    obj2.print()
+    merge_two_linked_list(obj, obj2)
