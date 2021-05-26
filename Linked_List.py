@@ -67,20 +67,6 @@ class Linked_list:
             count += 1
             itr = itr.next
 
-    def search(self, index):
-        if 0 > index > self.get_length():
-            raise Exception("Invalid")
-
-        elif index == 0:
-            return self.head.data
-        count = 1
-        itr = self.head.next
-        while itr:
-            if count == index:
-                return itr.data
-            count += 1
-            itr = itr.next
-
     def reverse_list(self):
         prev = None
         curr = self.head
