@@ -52,19 +52,19 @@ class BinaryTreeNode:
         array.append(self.data)  # Base root value
 
         if self.left:
-            array += self.left.in_order_traversal()
+            array += self.left.pre_order_traversal()
 
         if self.right:
-            array += self.right.in_order_traversal()
+            array += self.right.pre_order_traversal()
         return array
 
     def post_order_traversal(self):
         array = []
         if self.left:
-            array += self.left.in_order_traversal()
+            array += self.left.post_order_traversal()
 
         if self.right:
-            array += self.right.in_order_traversal()
+            array += self.right.post_order_traversal()
 
         array.append(self.data)  # Base root value
         return array
