@@ -139,7 +139,7 @@ if __name__ == "__main__":
     obj1.insert_at(6, 18)
     obj1.print()
     print("Length of list1 = " + str(obj1.get_length()))
-    print("data at index 2 in Lis1 = " + str(obj1.get_data(2)))
+    print("data at index 2 in List1 = " + str(obj1.get_data(2)))
 
     obj2 = Linked_list()
     obj2.insert_at_end(1)
