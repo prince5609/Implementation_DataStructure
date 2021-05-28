@@ -124,6 +124,26 @@ def merge_two_linked_list(a, b):
     return a.print()
 
 
+def mergeTwoLists_by_nodes(l1, l2):
+    dummy_node = Node(0, None)
+    tail = dummy_node
+    while True:
+        if l1 is None:
+            tail.next = l2
+            break
+        if l2 is None:
+            tail.next = l1
+            break
+        if l1.data <= l2.data:
+            tail.next = l1
+            l1 = l1.next
+        else:
+            tail.next = l2
+            l2 = l2.next
+        tail = tail.next
+    return dummy_node.next
+
+
 if __name__ == "__main__":
     obj1 = Linked_list()
     obj1.insert_at_beginning(1)
@@ -150,3 +170,4 @@ if __name__ == "__main__":
     obj2.print()
 
     merge_two_linked_list(obj1, obj2)
+    mergeTwoLists_by_nodes(obj1.head, obj2.head)
