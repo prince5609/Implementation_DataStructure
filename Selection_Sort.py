@@ -1,4 +1,4 @@
-def selection(array):
+def selection_sort(array):
     for i in range(len(array) - 1):
         minimum = min(array[i + 1:len(array)])
         if array[i] > minimum:
@@ -10,8 +10,8 @@ def selection(array):
     return array
 
 
-print(selection([21, 38, 29, 17, 4, 25, 11, 29, 32, 9]))
-print(selection([1, 0]))
-print(selection([1, 2, 3, 4, 5, 6, 7, 8, 9]))
-print(selection([55, 33, 9, 41, 6, 1, 7, 2, 5, 879, 5, 5, 4, 85, 5646, 2585, 5564]))
-print(selection([5, 5, 5, 5, 5, 5, 5, 5, 5]))
+print(selection_sort([21, 38, 29, 17, 4, 25, 11, 29, 32, 9]))
+print(selection_sort([1, 0]))
+print(selection_sort([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+print(selection_sort([55, 33, 9, 41, 6, 1, 7, 2, 5, 879, 5, 5, 4, 85, 5646, 2585, 5564]))
+print(selection_sort([5, 5, 5, 5, 5, 5, 5, 5, 5]))
