@@ -105,17 +105,18 @@ class Linked_list:
 
 
 def merge_two_linked_list(a, b):
-    length = b.get_length()
+    l1 = a.get_length()
+    l2 = b.get_length()
     i = j = 0
-    while j < length:
+    while i < l1 and j < l2:
         if a.get_data(i) >= b.get_data(j):
             a.insert_at(i, b.get_data(j))
             j += 1
         i += 1
-    while j < length:
+    while j < l2:
         a.insert_at(i, b.get_data(j))
-        j += 1
         i += 1
+        j += 1
     return a.print()
 
 
