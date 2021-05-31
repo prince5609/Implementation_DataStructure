@@ -106,13 +106,7 @@ class Linked_list:
 
 def merge_two_linked_list(a, b):
     length = b.get_length()
-    if a.get_data(0) >= b.get_data(0):
-        a.insert_at(0, b.get_data(0))
-        j = 1
-        i = 1
-    else:
-        j = 0
-        i = 1
+    i = j = 0
     while j < length:
         if a.get_data(i) >= b.get_data(j):
             a.insert_at(i, b.get_data(j))
@@ -157,7 +151,7 @@ if __name__ == "__main__":
     obj1.print()
     obj1.remove_at(4)
     obj1.print()
-    obj1.insert_at(3, 18)
+    obj1.insert_at(5, 18)
     obj1.print()
     print("Length of list1 = " + str(obj1.get_length()))
     print("data at index 2 in List1 = " + str(obj1.get_data(2)))
