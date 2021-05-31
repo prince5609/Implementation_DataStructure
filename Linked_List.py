@@ -81,6 +81,7 @@ class Linked_list:
     def print(self):
         if self.head is None:
             print("Linked List Is Empty")
+            return
         itr = self.head
         link_list = ""
         while itr:
