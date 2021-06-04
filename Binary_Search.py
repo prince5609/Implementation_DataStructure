@@ -1,7 +1,7 @@
 def binary_search(array, target):
     start = 0
     end = len(array) - 1
-    mid = (len(array) - start) // 2
+    mid = (end - start) // 2
     while end > start:
         if target == array[start]:
             return start
@@ -18,5 +18,5 @@ def binary_search(array, target):
 
 
 print(binary_search([1, 2, 3, 4, 5, 6, 7, 8, 9], 7))
-print(binary_search([], 0))
+print(binary_search([1, 2, 3], 0))
 print(binary_search([10, 20, 30, 40, 50, 100], 10))
