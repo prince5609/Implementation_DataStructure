@@ -9,7 +9,9 @@ class Graph:
                 self.graph_dict[start] = [end]
         print("Graph_dict :", self.graph_dict)
 
-    def get_paths(self, start, end, path=[]):
+    def get_paths(self, start, end, path=None):
+        if path is None:
+            path = []
         path = path + [start]
 
         if start == end:
@@ -27,7 +29,9 @@ class Graph:
                     paths.append(i)
         return paths
 
-    def get_shortest_path(self, start, end, path=[]):
+    def get_shortest_path(self, start, end, path=None):
+        if path is None:
+            path = []
         path = path + [start]
 
         if start == end:
