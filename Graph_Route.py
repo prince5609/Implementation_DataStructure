@@ -65,15 +65,15 @@ if __name__ == "__main__":
 
     start1 = "Mumbai"
     end1 = "Mumbai"
-    print("Route from Mumbai to Mumbai :", route_graph.get_paths(start1, end1))
+    print(f"Route from {start1} to {end1} :", route_graph.get_paths(start1, end1))
 
     start2 = "Toronto"
     end2 = "Mumbai"
-    print("Route from Toronto to Mumbai :", route_graph.get_paths(start2, end2))
+    print(f"Route from {start2} to {end2} :", route_graph.get_paths(start2, end2))
 
     start3 = "Mumbai"
-    end3 = "New York"
-    print("Routes fro Mumbai To New York :", route_graph.get_paths(start3, end3))
+    end3 = "Toronto"
+    print(f"Routes from {start3} To {end3} :", route_graph.get_paths(start3, end3))
 
     start4 = "Toronto"
     end4 = "Mumbai"
