@@ -48,6 +48,8 @@ class Graph:
                 if sp:
                     if shortest_path is None or len(sp) < len(shortest_path):
                         shortest_path = sp
+                    elif len(sp) == len(shortest_path):
+                        shortest_path.append(sp)
         return shortest_path
 
 
